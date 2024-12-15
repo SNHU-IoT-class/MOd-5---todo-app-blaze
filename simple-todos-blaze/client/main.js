@@ -1,4 +1,4 @@
-import '../imports/imports/ui/App.js';
+import '../imports/ui/App.js';
 
 
 
