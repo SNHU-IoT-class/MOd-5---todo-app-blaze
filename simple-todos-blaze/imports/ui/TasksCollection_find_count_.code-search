@@ -1,0 +1,9 @@
+# Query: TasksCollection.find().count()
+# ContextLines: 1
+
+1 result - 1 file
+
+simple-todos-blaze/server/main.js:
+  10  Meteor.startup(() => {
+  11:   if (TasksCollection.find().countAsync() === 0) {
+  12      [

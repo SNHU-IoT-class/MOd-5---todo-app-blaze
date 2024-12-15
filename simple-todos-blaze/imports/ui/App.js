@@ -1,33 +1,31 @@
-import { Meteor } from 'meteor/meteor';
+
 import { Template } from 'meteor/templating';
-import { TasksCollection } from "../api/TasksCollection";
-import './App.html';
+import { TasksCollection } from '../api/TasksCollection';
+import './App.html'; // Import the Blaze template
 
 Template.mainContainer.helpers({
   tasks() {
-    return TasksCollection.find({},{ sort: { createdAt: -1 } }) ;
+    return TasksCollection.find({}, { sort: { createdAt: -1 } });
   },
 });
 
 Template.form.events({
-  "submit .task-form"(event) {
-    // Prevent default browser form submit
+  'submit .task-form'(event) {
     event.preventDefault();
 
-    // Get value from form element
     const target = event.target;
     const text = target.text.value;
 
-    // Insert a task into the collection
-    TasksCollection.insert({
-      text,
-      createdAt: new Date(), // current time
-    });
+    if (text) {
+      TasksCollection.insert({
+        text,
+        createdAt: new Date(),
+      });
+      target.text.value = '';
+    }
+  },
+});
 
-    // Clear form
-    target.text.value = '';
-  }
-})
 
 
 
