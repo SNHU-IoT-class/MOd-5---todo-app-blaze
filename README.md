@@ -2,7 +2,7 @@
 
 
 terminal commands to start:
-meteor reset
+meteor reset - clear cache, if needed
 meteor
 
 mongosh mongodb://127.0.0.1:3001/meteor
