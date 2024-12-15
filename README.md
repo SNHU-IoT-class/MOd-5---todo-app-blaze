@@ -2,12 +2,13 @@
 
 
 terminal commands to start:
-#meteor reset - clear cache, if needed
+meteor reset - clear cache, if needed
 
 
+To start:
+meteor
 
-#meteor
-
+Starts server:
 mongosh mongodb://127.0.0.1:3001/meteor
 db.tasks.find().pretty()
 
